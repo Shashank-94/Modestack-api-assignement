@@ -1,0 +1,33 @@
+<mat-toolbar color="primary" class="navbar">
+  <div>ModeStack</div>
+  <div>
+    <span><a mat-button routerLink="/home">Home</a></span>
+    <span><a mat-button (click)="logout()">Logout</a></span>
+  </div>
+</mat-toolbar>
+<br>
+<div style="text-align:center">
+    <h2>
+      Article List
+    </h2>
+   
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Title</th>
+          <th scope="col" style="width:900px">Body</th>
+          <th scope="col">Author</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of collection.data | paginate: config">
+          <th scope="row">{{item.id}}</th>
+          <td>{{item.title}}</td>
+          <td style="width:900px">{{item.body}}</td>
+          <td>{{item.author}}</td>
+        </tr>
+      </tbody>
+    </table>
+   
+    <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>

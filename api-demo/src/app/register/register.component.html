@@ -1,0 +1,25 @@
+<mat-toolbar color="primary" class="app-header">ModeStack</mat-toolbar>
+<div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card fxFlex="25">
+        <mat-card-header>
+            <mat-card-title>Register</mat-card-title>
+        </mat-card-header>
+        <form fxLayoutAlign="stretch" fxLayout="column" [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
+            <mat-form-field>
+                <input matInput placeholder="User Name" formControlName="userName">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput type="password" placeholder="Password" formControlName="password"> 
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Email" formControlName="email">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Address" formControlName="address">
+            </mat-form-field>
+            <button mat-stroked-button color="primary" type="submit">Register</button>
+        </form>
+    </mat-card>
+</div>
+
+  

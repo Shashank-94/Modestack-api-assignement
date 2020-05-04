@@ -1,0 +1,28 @@
+<mat-toolbar color="primary" class="navbar">
+    <div>ModeStack</div>
+    <div>
+      <span><a mat-button routerLink="/home">Home</a></span>
+      <span><a mat-button (click)="logout()">Logout</a></span>
+    </div>
+  </mat-toolbar>
+<div fxLayoutAlign="center center" fxFlexFill>
+    <mat-card fxFlex="25">
+        <mat-card-header>
+            <mat-card-title>Create Article</mat-card-title>
+        </mat-card-header>
+        <form fxLayoutAlign="stretch" fxLayout="column" [formGroup]="articleForm" (ngSubmit)="onSubmit(articleForm.value)">
+            <mat-form-field>
+                <input matInput placeholder="Title" formControlName="title">
+            </mat-form-field>
+            <mat-form-field>
+                <textarea matInput placeholder="Body" formControlName="body"></textarea>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Author" formControlName="author">
+            </mat-form-field>
+            <button mat-stroked-button color="primary" type="submit">Submit</button>
+        </form>
+    </mat-card>
+</div>
+
+  
